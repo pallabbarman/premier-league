@@ -3,7 +3,7 @@ import { faFlag, faFutbol, faMapMarkerAlt, faVenusMars } from '@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import female from '../../images/female.jpg';
 import male from '../../images/male.jpg';
 import './TeamDetail.css';
@@ -33,6 +33,13 @@ const TeamDetail = () => {
             .then((data) => setTeam(data.teams[0]));
     }, [idTeam]);
 
+    let isGender;
+    if (strGender === 'Male') {
+        isGender = <img src={male} alt="Male" />;
+    } else if (strGender === 'Female') {
+        isGender = <img src={female} alt="female" />;
+    }
+
     return (
         <>
             <img className="banner-img" src={strTeamBanner} alt="" />
@@ -40,7 +47,7 @@ const TeamDetail = () => {
                 <Row>
                     <Col md={6}>
                         <h1>{strTeam}</h1>
-                        <h3>{strLeague}</h3>
+                        <h4>League: {strLeague}</h4>
                         <p>
                             <FontAwesomeIcon icon={faMapMarkerAlt} /> Founded: {intFormedYear}
                         </p>
@@ -55,11 +62,7 @@ const TeamDetail = () => {
                         </p>
                     </Col>
                     <Col md={6} className="team">
-                        {strGender ? (
-                            <img src={male} alt="Male" />
-                        ) : (
-                            <img src={female} alt="female" />
-                        )}
+                        {isGender}
                     </Col>
                 </Row>
                 <br />
@@ -69,15 +72,13 @@ const TeamDetail = () => {
                     <p>{strDescriptionEN}</p>
                 </div>
                 <div className="text-center social">
-                    <Link to={` https://${strFacebook}`} target="_blank">
+                    <a href={`https://${strFacebook}`} rel="noreferrer" target="_blank">
                         <FontAwesomeIcon icon={faFacebook} />
-                    </Link>
-
-                    <a href={strTwitter}>
+                    </a>
+                    <a href={`https://${strTwitter}`} rel="noreferrer" target="_blank">
                         <FontAwesomeIcon icon={faTwitter} />
                     </a>
-
-                    <a href={strInstagram}>
+                    <a href={`https://${strInstagram}`} rel="noreferrer" target="_blank">
                         <FontAwesomeIcon icon={faInstagram} />
                     </a>
                 </div>
