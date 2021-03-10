@@ -6,16 +6,21 @@ import Teams from './components/Teams/Teams';
 
 function App() {
     return (
-        <Router>
-            <Switch>
-                <Route exact path="/">
-                    <Teams />
-                </Route>
-                <Route path="/team/:idTeam">
-                    <TeamDetail />
-                </Route>
-            </Switch>
-        </Router>
+        <div className="App">
+            <Router>
+                <Switch>
+                    <Route exact path="/">
+                        <Teams />
+                    </Route>
+                    <Route path="/teams">
+                        <Teams />
+                    </Route>
+                    <Route path="/team/:idTeam">
+                        <TeamDetail />
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
     );
 }
 

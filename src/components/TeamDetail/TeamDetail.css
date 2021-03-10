@@ -6,6 +6,7 @@
     height: 250px;
     width: 100%;
     object-fit: cover;
+    border-radius: 10px;
 }
 .social {
     font-size: 60px;
@@ -13,4 +14,9 @@
 }
 .social a {
     margin: 20px;
+}
+.team-info {
+    background-color: rgb(53, 183, 216);
+    border-radius: 10px;
+    padding: 10px;
 }

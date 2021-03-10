@@ -1,4 +1,4 @@
-import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faFlag, faFutbol, faMapMarkerAlt, faVenusMars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
@@ -24,6 +24,7 @@ const TeamDetail = () => {
         strFacebook,
         strTwitter,
         strInstagram,
+        strYoutube,
     } = team;
 
     useEffect(() => {
@@ -44,7 +45,7 @@ const TeamDetail = () => {
         <>
             <img className="banner-img" src={strTeamBanner} alt="" />
             <Container className="mt-5">
-                <Row>
+                <Row className="team-info">
                     <Col md={6}>
                         <h1>{strTeam}</h1>
                         <h4>League: {strLeague}</h4>
@@ -81,7 +82,11 @@ const TeamDetail = () => {
                     <a href={`https://${strInstagram}`} rel="noreferrer" target="_blank">
                         <FontAwesomeIcon icon={faInstagram} />
                     </a>
+                    <a href={`https://${strYoutube}`} rel="noreferrer" target="_blank">
+                        <FontAwesomeIcon icon={faYoutube} />
+                    </a>
                 </div>
+                <br />
             </Container>
         </>
     );
