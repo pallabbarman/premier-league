@@ -1,16 +1,14 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+    <Navbar bg="dark" variant="dark" sticky="top" expand="lg" className="nav">
         <Container>
-            <Navbar.Brand href="#home">Premier League</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                </Nav>
-            </Navbar.Collapse>
+            <Navbar.Brand as={Link} to="/">
+                Premier League
+            </Navbar.Brand>
         </Container>
     </Navbar>
 );

@@ -15,7 +15,7 @@ const Teams = () => {
         <Container>
             <Row>
                 {teams.map((team) => (
-                    <TeamList team={team} />
+                    <TeamList team={team} key={team.idTeam} />
                 ))}
             </Row>
         </Container>
