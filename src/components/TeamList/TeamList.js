@@ -15,8 +15,7 @@ const TeamList = (props) => {
                 <Card.Body className="text-center">
                     <Card.Title>{strTeam}</Card.Title>
                     <Button as={Link} to={`/team/${idTeam}`} variant="primary">
-                        Explore
-                        <FontAwesomeIcon icon={faArrowRight} />
+                        Explore <FontAwesomeIcon icon={faArrowRight} />
                     </Button>
                 </Card.Body>
             </Card>
