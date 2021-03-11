@@ -1,9 +1,15 @@
 import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faFlag, faFutbol, faMapMarkerAlt, faVenusMars } from '@fortawesome/free-solid-svg-icons';
+import {
+    faArrowLeft,
+    faFlag,
+    faFutbol,
+    faMapMarkerAlt,
+    faVenusMars,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 import female from '../../images/female.jpg';
 import male from '../../images/male.jpg';
 import './TeamDetail.css';
@@ -74,6 +80,11 @@ const TeamDetail = () => {
                     <br />
                     <p>{strDescriptionEN}</p>
                 </div>
+
+                <Button as={Link} to="/" variant="outline-primary">
+                    <FontAwesomeIcon icon={faArrowLeft} /> Back
+                </Button>
+
                 <div className="text-center social">
                     <a href={`https://${strFacebook}`} rel="noreferrer" target="_blank">
                         <FontAwesomeIcon icon={faFacebook} />

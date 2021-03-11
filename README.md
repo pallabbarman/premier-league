@@ -4,5 +4,5 @@
 
 This is a simple react project using react router and react bootstrap.
 
- [Live Link](https://github.com/facebook/create-react-app).
+ [Live Link](https://web-premier-league.netlify.app/).
 
