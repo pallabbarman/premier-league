@@ -8,6 +8,7 @@ import './TeamList.css';
 const TeamList = (props) => {
     const { team } = props;
     const { idTeam, strTeam, strTeamBadge } = team;
+
     return (
         <Col md={4} className="d-flex justify-content-center">
             <Card className="card">

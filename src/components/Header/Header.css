@@ -1,7 +1,7 @@
 .nav {
     background: url("../../images/banner.jpg");
-    background-size: cover;
+    background-size: 100% 300px;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 250px;
     font-weight: 700;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Header from '../Header/Header';
@@ -9,7 +10,11 @@ const Teams = () => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League`;
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setTeams(data.teams));
+            .then((data) => setTeams(data.teams))
+            .catch((err) => {
+                console.log(err);
+                alert('Somethings went wrong! Please try again later!');
+            });
     }, []);
 
     return (

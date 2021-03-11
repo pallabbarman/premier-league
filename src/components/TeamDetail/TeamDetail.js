@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { faFacebook, faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
     faArrowLeft,
@@ -37,15 +38,17 @@ const TeamDetail = () => {
         const url = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`;
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setTeam(data.teams[0]));
+            .then((data) => setTeam(data.teams[0]))
+            .catch((err) => {
+                console.log(err);
+                alert('Somethings went wrong! Please try again later!');
+            });
     }, [idTeam]);
 
     let isGender;
     if (strGender === 'Male') {
         isGender = <img src={male} alt="Male" />;
-    } else if (strGender === 'Female') {
-        isGender = <img src={female} alt="female" />;
-    } else {
+    } else if (strGender === 'Female' || strGender === 'Mixed') {
         isGender = <img src={female} alt="female" />;
     }
 
