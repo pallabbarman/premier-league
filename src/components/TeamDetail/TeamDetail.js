@@ -39,6 +39,8 @@ const TeamDetail = () => {
         isGender = <img src={male} alt="Male" />;
     } else if (strGender === 'Female') {
         isGender = <img src={female} alt="female" />;
+    } else {
+        isGender = <img src={female} alt="female" />;
     }
 
     return (
